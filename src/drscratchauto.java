@@ -44,7 +44,7 @@ public static void main(String[] args) {
 		        Analyzebutton.click();
 		        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //		        WebElement score=driver.findElement(By.xpath("//*[@id=\"score\"]"));
-		       
+		       //The code below has error which needs to be handled
 		        Boolean textval=driver.findElement(By.xpath("//*[@id=\"score\"]")).isDisplayed();
 		        String textvalue=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
 		    
