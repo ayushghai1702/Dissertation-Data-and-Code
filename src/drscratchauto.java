@@ -12,7 +12,7 @@ public class drscratchauto {
 
 public static void main(String[] args) {
 
-        String csvFile = "C:\\Users\\ayush\\Desktop\\ScratchExplore CLoud.csv";
+        String csvFile = "C:\\Users\\ayush\\eclipse-workspace\\ScratchAutoDissert\\ScratchExplore CLoud.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -42,13 +42,24 @@ public static void main(String[] args) {
 		        projinput.sendKeys(Project_url[1]);
 		        
 		        Analyzebutton.click();
-		        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//		        WebElement score=driver.findElement(By.xpath("//*[@id=\"score\"]"));
+		        //WebElement score=driver.findElement(By.xpath("//*[@id=\"score\"]"));
 		       //The code below has error which needs to be handled
 		        Boolean textval=driver.findElement(By.xpath("//*[@id=\"score\"]")).isDisplayed();
-		        String textvalue=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
-		    
+		        if(textval== true)
+		        {
+		        	String textvalue=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
+		        	System.out.print(textvalue);
+		        }
+		        else
+		        {
+			        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		        	String textvalue=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
+		        	System.out.print(textvalue);
+
+		        }
 		        
+		        System.out.println(textval);
+		       
 		        		
 		        driver.close();
 
