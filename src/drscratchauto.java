@@ -2,11 +2,17 @@
 	import java.io.BufferedReader;
 	import java.io.FileNotFoundException;
 	import java.io.FileReader;
-	import java.io.IOException;
-	import org.openqa.selenium.WebDriver;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.io.FileWriter; 
+
+import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.firefox.*;
 	import org.openqa.selenium.WebElement;
 	import java.util.concurrent.TimeUnit;
+	import com.opencsv.*;
+import com.sun.java_cup.internal.runtime.Scanner;
 public class drscratchauto {
 
 
@@ -55,6 +61,13 @@ public static void main(String[] args) {
 		        	String Synchronization_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[5]/td[2]/div/div[1]/span/strong")).getText();
 		        	String Parallelism_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[6]/td[2]/div/div[1]/span/strong")).getText();
 		        	String Logic_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[7]/td[2]/div/div[1]/span/strong")).getText();
+		        	
+		        	String[] Final_Score_Array= new String [] {Final_Score};
+		            FileWriter outputfile = new FileWriter("C:\\\\Users\\\\ayush\\\\eclipse-workspace\\\\ScratchAutoDissert\\\\Scratch_Score.csv"); 
+		        	CSVWriter writer = new CSVWriter(outputfile, ';', 
+                            CSVWriter.NO_QUOTE_CHARACTER, 
+                            CSVWriter.DEFAULT_ESCAPE_CHARACTER, 
+                            CSVWriter.DEFAULT_LINE_END); 
 		        	
 		        	
 		        	System.out.println(Final_Score);
