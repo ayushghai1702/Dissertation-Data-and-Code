@@ -47,8 +47,25 @@ public static void main(String[] args) {
 		        Boolean textval=driver.findElement(By.xpath("//*[@id=\"score\"]")).isDisplayed();
 		        if(textval== true)
 		        {
-		        	String textvalue=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
-		        	System.out.print(textvalue);
+		        	String Final_Score=driver.findElement(By.xpath("//*[@id=\"score\"]")).getText();
+		        	String Flow_Control_Score=driver.findElement(By.xpath("/html/body/div/div[2]/	div/section/div/div/div/div/table/tbody/tr[1]/td[2]/div/div[1]")).getText();
+		        	String Data_Representation_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[2]/td[2]/div/div[1]/span/strong")).getText();
+		        	String Abstraction_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[3]/td[2]/div/div[1]/span/strong")).getText();
+		        	String User_Interactivity_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[4]/td[2]/div/div[1]/span/strong")).getText();
+		        	String Synchronization_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[5]/td[2]/div/div[1]/span/strong")).getText();
+		        	String Parallelism_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[6]/td[2]/div/div[1]/span/strong")).getText();
+		        	String Logic_Score= driver.findElement(By.xpath("/html/body/div/div[2]/div/section/div/div/div/div/table/tbody/tr[7]/td[2]/div/div[1]/span/strong")).getText();
+		        	
+		        	
+		        	System.out.println(Final_Score);
+		        	System.out.println(Flow_Control_Score);
+		        	System.out.println(Data_Representation_Score);
+		        	System.out.println(Abstraction_Score);
+		        	System.out.println(User_Interactivity_Score);
+		        	System.out.println(Synchronization_Score);
+		        	System.out.println(Parallelism_Score);
+		        	System.out.println(Logic_Score);
+
 		        }
 		        else
 		        {
